@@ -1,0 +1,56 @@
+---
+##########################################################
+## Kitchen Lights Automation
+##########################################################
+
+     #####################################################
+     ## Kitchen Lights On with Motion Day
+     #####################################################
+
+- alias: Kitchen Lights On with Motion
+  initial_state: true
+#  hide_entity: True
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.kitchen_sensor_motion
+    to: 'on'
+  condition:
+    - condition: numeric_state
+      entity_id: 'sensor.kitchen_sensor_light_level'
+      below: 20
+  action:
+  - data_template:
+      entity_id: light.kitchen_ceiling
+      brightness: "{{ states('input_number.light_brightness') | int }}"
+      kelvin: "{{ states('input_number.light_kelvin') | int }}"
+#      transition: 15
+    service: light.turn_on
+  - data:
+      entity_id: switch.kitchen_cabinet_lights
+    service: switch.turn_on
+
+     #####################################################
+     ## Kitchen Lights On with Motion Night
+     #####################################################
+
+     #####################################################
+     ## Kitchen Lights Off Without Motion
+     #####################################################
+
+- alias: Kitchen Cabinet Lights Off Without Motion
+  initial_state: true
+#  hide_entity: True
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.kitchen_sensor_motion
+    to: 'off'
+    for: 0:15:00
+  condition: []
+  action:
+  - data:
+      entity_id: switch.kitchen_cabinet_lights
+    service: switch.turn_off
+  - data:
+      entity_id: 
+        - light.kitchen_ceiling
+    service: light.turn_off

@@ -1,0 +1,44 @@
+---
+##########################################################
+## Downstairs Hallway Automation
+##########################################################
+
+     #####################################################
+     ## Downstairs Hallway Lights On with Motion
+     #####################################################
+
+
+- alias: Downstairs Hallway light on with Motion
+  initial_state: true
+  hide_entity: false
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.downstairs_hallway_sensor_motion
+    to: 'on'
+  condition: []
+  action:
+  - service: light.turn_on
+    data_template:
+      entity_id: light.downstairs_hallway
+      brightness: "{{ states('input_number.light_brightness') | int }}"
+      kelvin: "{{ states('input_number.light_kelvin') | int }}"
+#      transition: 15
+
+     #####################################################
+     ## Downstairs Hallway Lights Off without Motion
+     #####################################################
+
+
+- alias: Downstairs Hallway Light Off without Motion
+  initial_state: true
+  hide_entity: false
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.downstairs_hallway_sensor_motion
+    to: 'off'
+    for: '00:05:00'
+  condition: []
+  action:
+  - service: light.turn_off
+    data:
+      entity_id: light.downstairs_hallway

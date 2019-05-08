@@ -1,0 +1,25 @@
+---
+# https://www.home-assistant.io/components/device_tracker.unifi/
+
+platform: unifi
+host: !secret unifi_host
+username: !secret unifi_username
+password: !secret unifi_password
+site_id: !secret unifi_site_id
+consider_home: 300
+verify_ssl: false
+new_device_defaults:
+  track_new_devices: false
+  hide_if_away: false
+ssid_filter:
+  - 'EyeonMac'
+monitored_conditions:
+  - _id
+  - hostname
+  - last_seen
+  - mac
+  - name
+  - signal
+  - uptime
+  - user_id
+  - vlan

@@ -1,0 +1,32 @@
+---
+# Provides a list of entities to exclude in HomeKit.
+#
+# https://www.home-assistant.io/components/homekit/#exclude_entities
+#
+exclude_entities:
+  - light.kitchen_ceiling_1
+  - light.kitchen_ceiling_2
+  - light.kitchen_ceiling_3
+  - light.kitchen_ceiling_4
+  - light.kitchen_ceiling_5
+  - light.kitchen_ceiling_6
+  - light.kitchen_table_1
+  - light.kitchen_table_2
+  - light.kitchen_table_3
+  - light.kitchen_table_4
+  - light.kitchen_table_5
+  - light.living_room_lamp_1
+  - light.living_room_lamp_2
+  - light.living_room_lamp_3
+  - light.master_bedroom_1
+  - light.master_bedroom_2
+  - light.upstairs_hallway_ceiling_light_1
+  - light.upstairs_hallway_ceiling_light_2
+  - light.upstairs_hallway_ceiling_light_3
+  - light.den_hue_go
+  - light.den_lamp
+  - light.den_lamp_2
+#  - switch.hassio
+  - switch.rosie_schedule
+#  - switch.uvc_g3_flex_8ded
+#  - binary_sensor.key_fob

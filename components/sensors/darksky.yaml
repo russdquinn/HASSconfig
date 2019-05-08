@@ -1,0 +1,19 @@
+---
+
+platform: darksky
+api_key: !secret darksky_api_key
+monitored_conditions:
+  - temperature
+  - apparent_temperature
+  - wind_speed
+  - wind_gust
+  - humidity
+  - daily_summary
+  - summary
+  - hourly_summary
+  - minutely_summary
+  - moon_phase
+  - sunrise_time
+  - sunset_time
+  - nearest_storm_distance
+  - nearest_storm_bearing

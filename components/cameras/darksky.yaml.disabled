@@ -1,0 +1,5 @@
+---
+
+platform: generic
+still_image_url: https://darksky.net/map-embed/@radar,33.780,-86.776,7.js?embed=true&timeControl=true&fieldControl=true&defaultField=radar'
+name: Kimberly Radar

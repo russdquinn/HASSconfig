@@ -1,0 +1,47 @@
+---
+##########################################################
+## Living Room Lamps Automation
+##########################################################
+
+     #####################################################
+     ## Living Room Lamps On With Motion
+     #####################################################
+
+- alias: Living Room Lamps On with Motion
+  initial_state: true
+#  hide_entity: True
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.living_room_sensor_motion
+    to: 'on'
+  condition:
+    - condition: numeric_state
+      entity_id: 'sensor.living_room_sensor_light_level'
+      below: 20
+  action:
+  - data_template:
+      entity_id: light.living_room_lamps
+      brightness: "{{ states('input_number.light_brightness') | int }}"
+      kelvin: "{{ states('input_number.light_kelvin') | int }}"
+#      transition: 15
+    service: light.turn_on
+
+     #####################################################
+     ## Living Room Lights Off Without Motion
+     #####################################################
+
+- alias: Living Room Lights Off Without Motion
+  initial_state: true
+#  hide_entity: True
+  trigger:
+  - entity_id: binary_sensor.living_room_sensor_motion
+    platform: state
+    to: 'off'
+    for: '00:30:00'
+  condition: []
+  action:
+  - data:
+      entity_id: 
+        - light.living_room_lamps
+        - light.living_room_ceiling_lights
+    service: light.turn_off

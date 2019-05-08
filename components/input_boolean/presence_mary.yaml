@@ -1,0 +1,6 @@
+---
+# Input Boolean for Presence Mary
+
+presence_mary:
+  name: Presence Mary
+  icon: mdi:account

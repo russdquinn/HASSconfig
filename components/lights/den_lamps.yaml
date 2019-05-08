@@ -1,0 +1,9 @@
+---
+# Combine all den hue lights into group
+
+platform: group
+name: Den Lamps
+entities:
+  - light.den_hue_go
+  - light.den_lamp
+  - light.den_lamp_2

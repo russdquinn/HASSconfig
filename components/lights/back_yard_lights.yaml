@@ -1,0 +1,6 @@
+---
+# Back Yard lights using a Z-Wave switch
+
+platform: switch
+name: Back Yard Lights
+entity_id: switch.back_yard_lights

@@ -1,0 +1,9 @@
+---
+# Combine Upstairs Hallway Ceiling Hue lights into group
+
+platform: group
+name: Upstairs Hallway Ceiling
+entities:
+  - light.upstairs_hallway_ceiling_1
+  - light.upstairs_hallway_ceiling_2
+  - light.upstairs_hallway_ceiling_3

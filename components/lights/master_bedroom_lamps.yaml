@@ -1,0 +1,8 @@
+---
+# Combine Master Bedroom Hue Lamps into a group
+
+platform: group
+name: Master Bedroom Lamps
+entities:
+  - light.master_bedroom_lamp_1
+  - light.master_bedroom_lamp_2

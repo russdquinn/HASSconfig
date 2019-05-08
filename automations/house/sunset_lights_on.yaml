@@ -1,0 +1,23 @@
+---
+     #####################################################
+     ## Sunset Turns On Lights
+     #####################################################
+
+- alias: Sunset Turns On Lights
+  initial_state: true
+#  hide_entity: True
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: "-00:45:00"
+  condition: []
+  action:
+  - data_template:
+      entity_id:
+        - light.upstairs_hallway_lamp
+        - light.mary_bedroom_lamp
+        - light.abigail_bedroom_lamp
+        - light.dining_room_lamp
+      brightness: "{{ states('input_number.light_brightness') | int }}"
+      kelvin: "{{ states('input_number.light_kelvin') | int }}"
+    service: light.turn_on

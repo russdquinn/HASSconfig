@@ -1,0 +1,32 @@
+#####################################################################
+# Home Assistant Configuration
+#####################################################################
+discovery:
+  ignore:
+    - samsung_tv
+homeassistant:
+  auth_mfa_modules:
+    - type: totp
+      name: Authenticator app
+    - type: notify
+      message: 'Please enter this verification code for Home Assistant {}'
+  name: Quinncentral
+  latitude: !secret homeassistant_latitude
+  longitude: !secret homeassistant_longitude
+  elevation: !secret homeassistant_elevation
+  unit_system: imperial
+  time_zone: America/Chicago
+  customize: !include customize.yaml
+  packages: !include_dir_named components/packages
+
+mobile_app:
+person:
+
+
+     ################################################################
+     ## Includes
+     ################################################################
+
+
+automation: !include automations.yaml
+script: !include scripts.yaml

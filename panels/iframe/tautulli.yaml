@@ -1,0 +1,11 @@
+---
+# Adds an iframe panel to the Home Assistant frontend for the Tautulli add-on.
+#
+# https://github.com/hassio-addons/addon-influxdb#embedding-into-home-assistant
+# https://www.home-assistant.io/components/panel_iframe/
+# https://github.com/hassio-addons/repository/tree/master/tautulli
+
+tautulli:
+  title: Tautulli
+  icon: mdi:filmstrip
+  url: http://10.17.10.139:8181

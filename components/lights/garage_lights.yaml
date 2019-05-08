@@ -1,0 +1,6 @@
+---
+# Garage Lights using a Z-Wave switch
+
+platform: switch
+name: Garage Lights
+entity_id: switch.garage_lights

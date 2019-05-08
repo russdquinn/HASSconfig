@@ -1,0 +1,6 @@
+---
+# Input Boolean for Presence Abigail
+
+presence_abigail:
+  name: Presence Abigail
+  icon: mdi:account

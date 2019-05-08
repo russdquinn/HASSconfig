@@ -1,0 +1,12 @@
+---
+# combine kitchen table hue lights into one light
+
+platform: group
+name: Kitchen Table
+entities:
+  - light.kitchen_table_1
+  - light.kitchen_table_2
+  - light.kitchen_table_3
+  - light.kitchen_table_4
+  - light.kitchen_table_5
+  - light.kitchen_table_6

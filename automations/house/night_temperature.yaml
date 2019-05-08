@@ -1,0 +1,17 @@
+---
+- alias: Temperature at Night
+  initial_state: true
+  trigger:
+    platform: time
+    at: "20:30:00"
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.upstairs
+        target_temp_low: 68
+        target_temp_high: 75
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.downstairs
+        target_temp_low: 68
+        target_temp_high: 75

@@ -1,0 +1,19 @@
+---
+#####################################################
+## Start Homekit after Z-wave Ready
+#####################################################
+
+- alias: 'Start HomeKit'
+  initial_state: true
+  trigger:
+    - platform: event
+      event_type: zwave.network_ready
+    - platform: event
+      event_type: zwave.network_complete
+    - platform: event
+      event_type: zwave.network_complete_some_dead
+  action:
+    - service: homekit.start
+#    - data:
+#        entity_id: switch.flux
+#      service: switch.turn_on

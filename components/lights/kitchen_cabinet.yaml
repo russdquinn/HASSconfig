@@ -1,0 +1,6 @@
+---
+# Kitchen cabinet lights using a Z-Wave switch
+
+platform: switch
+name: Kitchen Cabinet
+entity_id: switch.kitchen_cabinet_lights

@@ -1,0 +1,76 @@
+light.kitchen_ceiling_1:
+  hidden: true
+light.kitchen_ceiling_2:
+  hidden: true
+light.kitchen_ceiling_3:
+  hidden: true
+light.kitchen_ceiling_4:
+  hidden: true
+light.kitchen_ceiling_5:
+  hidden: true
+light.kitchen_ceiling_6:
+  hidden: true
+light.kitchen_table_1:
+  hidden: true
+light.kitchen_table_2:
+  hidden: true
+light.kitchen_table_3:
+  hidden: true
+light.kitchen_table_4:
+  hidden: true
+light.kitchen_table_5:
+  hidden: true
+sensor.schlage_allegion_be469_touchscreen_deadbolt_access_control:
+  hidden: true
+sensor.schlage_allegion_be469_touchscreen_deadbolt_alarm_level_2:
+  hidden: true
+sensor.schlage_allegion_be469_touchscreen_deadbolt_alarm_type_2:
+  hidden: true
+sensor.schlage_allegion_be469_touchscreen_deadbolt_burglar:
+  hidden: true
+sensor.schlage_allegion_be469_touchscreen_deadbolt_power_management:
+  hidden: true
+sensor.schlage_allegion_be469_touchscreen_deadbolt_sourcenodeid:
+  hidden: true
+sensor.schlage_allegion_be469_touchscreen_deadbolt_system:
+  hidden: true
+sensor.schlage_allegion_be469zp_connect_smart_deadbolt_access_control_2:
+  hidden: true
+sensor.schlage_allegion_be469zp_connect_smart_deadbolt_access_control_3:
+  hidden: true
+sensor.schlage_allegion_be469zp_connect_smart_deadbolt_alarm_level:
+  hidden: true
+sensor.schlage_allegion_be469zp_connect_smart_deadbolt_alarm_level_2:
+  hidden: true
+sensor.schlage_allegion_be469zp_connect_smart_deadbolt_alarm_type:
+  hidden: true
+sensor.schlage_allegion_be469zp_connect_smart_deadbolt_alarm_type_2:
+  hidden: true
+sensor.schlage_allegion_be469zp_connect_smart_deadbolt_burglar_2:
+  hidden: true
+sensor.schlage_allegion_be469zp_connect_smart_deadbolt_burglar_3:
+  hidden: true
+sensor.schlage_allegion_be469zp_connect_smart_deadbolt_power_management_2:
+  hidden: true
+sensor.schlage_allegion_be469zp_connect_smart_deadbolt_power_management_3:
+  hidden: true
+sensor.schlage_allegion_be469zp_connect_smart_deadbolt_sourcenodeid_2:
+  hidden: true
+sensor.schlage_allegion_be469zp_connect_smart_deadbolt_sourcenodeid_3:
+  hidden: true
+sensor.schlage_allegion_be469zp_connect_smart_deadbolt_system_2:
+  hidden: true
+sensor.schlage_allegion_be469zp_connect_smart_deadbolt_system_3:
+  hidden: true
+person.russ:
+  entity_picture: /local/favicon-russ-192x192.png
+person.laura:
+  entity_picture: /local/favicon-laura-192x192.png
+person.mary:
+  entity_picture: /local/favicon-mary-192x192.png
+person.abigail:
+  entity_picture: /local/favicon-abigail-192x192.png
+person.sarah:
+  entity_picture: https://www.life360.com/img/user_images/3cf2fd19-a3fa-456a-94c3-65ed63a95195/0ed62c81-00ab-49f9-a5bf-65344b110b79.jpg?fd=2
+person.ellen:
+  entity_picture: https://www.life360.com/img/user_images/b3b7df81-f021-499e-9254-8688be9cde5a/62b55097-2984-4e90-be92-e3bd624fc09b.jpg?fd=2

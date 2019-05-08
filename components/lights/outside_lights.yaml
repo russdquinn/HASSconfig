@@ -1,0 +1,8 @@
+platform: group
+name: Outside Lights
+entities:
+  - light.back_porch_light
+  - light.back_yard_lights
+  - light.front_porch_light
+  - light.front_yard_lights
+  - light.garage_door_outside

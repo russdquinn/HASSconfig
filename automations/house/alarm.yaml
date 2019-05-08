@@ -1,0 +1,102 @@
+---
+
+     #####################################################
+     ## Motion When Armed Away
+     #####################################################
+
+- alias: Motion When Armed Away
+  initial_state: true
+  trigger:
+  - platform: state
+    entity_id: 
+      - binary_sensor.den_sensor_motion
+      - binary_sensor.downstairs_hallway_sensor_motion
+      - binary_sensor.kitchen_sensor_motion
+      - binary_sensor.living_room_sensor_motion
+      - binary_sensor.master_bedroom_sensor_motion
+      - binary_sensor.master_bathroom_sensor_motion
+    to: 'on'
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.abode
+      state: 'armed_away'
+  action:
+# Need to add notification
+  - data:
+      entity_id: 
+        - light.den_lamps
+    service: light.turn_on
+
+
+     #####################################################
+     ## Opening Garage Door Armed Away to Armed Home
+     #####################################################
+
+- alias: Opening Garage Door Armed Away to Armed Home
+  initial_state: true
+  trigger:
+  - entity_id: cover.garage_door_left
+    platform: state
+    to: 'opening'
+  - entity_id: cover.garage_door_right
+    platform: state
+    to: 'opening'
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.abode
+      state: 'armed_away'
+  action:
+  - data:
+      entity_id: 
+        - alarm_control_panel.abode
+    service: alarm_control_panel.alarm_arm_home
+
+     #####################################################
+     ## Disarm Turns Lights Green
+     ##    - Have to determine how to return to normal
+     ##    - Maybe use scenes and sync light back to known?
+     #####################################################
+
+#- alias: Disarming Turns Lights Green
+#  hide_entity: True
+#  trigger:
+#  - entity_id: alarm_control_panel.abode
+#    platform: state
+#    to: 'disarmed'
+#  condition: []
+#  action:
+#  - data:
+#      entity_id: 
+#        - light.dining_room_lamp
+#        - light.garage_door_outside
+#        - light.living_room_lamp_2
+#      brightness: 255
+#      rgb_color: [0, 255, 65]
+#    service: light.turn_on
+#  - delay: '00:01:30'
+#- alias: Disarm Light Returns to Normal
+#  trigger:
+#  - entity_id:
+#        - light.dining_room_lamp
+#        - light.garage_door_outside
+#        - light.living_room_lamp_2
+
+
+     #####################################################
+     ## Change Lights to Show Alarm Status
+     #####################################################
+
+# trigger - any person arrives home
+# actions
+#   - turn dining room lamp and garage door light purple for Armed Home, Red for Armed Away, or green for disarmed
+
+# trigger - armed away
+#   - turns
+
+     #####################################################
+     ## Burglar Alarm Turns Lights Solid Red and Barks
+     #####################################################
+
+     #################################################################################
+     ## Smoke Alarm Flashes Lights Red, Unlocks Doors, Opens Garage, and Turns Off Air
+     #################################################################################

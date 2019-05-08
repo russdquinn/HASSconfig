@@ -1,0 +1,9 @@
+---
+     ################################################################
+     # Eight Sleep Matress Cover
+     ################################################################
+
+eight_sleep:
+  username: !secret eight_sleep_username
+  password: !secret eight_sleep_password
+  partner: true

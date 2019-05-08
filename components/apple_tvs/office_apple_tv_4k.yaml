@@ -1,0 +1,9 @@
+---
+# Adds my Office Apple TV 4K.
+#
+# https://www.home-assistant.io/components/apple_tv/
+#
+host: 10.17.30.12
+login_id: !secret apple_tv_login_id
+name: Office Apple TV 4K
+start_off: true

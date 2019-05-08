@@ -1,0 +1,134 @@
+---
+##########################################################
+## Outside Automations
+##########################################################
+
+     #####################################################
+     ## Front Porch Person Detected Turns On Lights
+     #####################################################
+
+- alias: Front Porch Person Detected Turns On Lights
+  initial_state: true
+#  hide_entity: True
+  trigger:
+  - entity_id: binary_sensor.front_door_camera_person_detected
+    platform: state
+    to: 'on'
+  condition:
+    condition: or
+    conditions:
+      - condition: sun
+        after: sunset
+#        after_offset: "-00:45:00"
+      - condition: sun
+        before: sunrise
+#        before_offset: "00:45:00"
+  action:
+  - data:
+      entity_id: 
+        - switch.front_porch_light
+        - switch.front_yard_lights
+    service: switch.turn_on
+  - delay: '00:10:00'
+  - data:
+      entity_id:
+        - switch.front_porch_light
+        - switch.front_yard_lights
+    service: switch.turn_off
+
+     #####################################################
+     ## Outside Yard Lights On with Door Opening at Night
+     #####################################################
+
+- alias: Outside Yard Lights On with Garage Door Opening at Night
+  initial_state: true
+  hide_entity: false
+  trigger:
+  - platform: state
+    entity_id: cover.garage_door_left
+    to: 'opening'
+  - platform: state
+    entity_id: cover.garage_door_right
+    to: 'opening'
+  - platform: state
+    entity_id: binary_sensor.basement_door_sensor
+    to: 'on'
+  - platform: state
+    entity_id: lock.garage_door
+    to: 'unlocked'
+  - platform: state
+    entity_id: binary_sensor.back_door_sensor
+    to: 'on'
+  - platform: state
+    entity_id: lock.back_door
+    to: 'unlocked'
+  - platform: state
+    entity_id: binary_sensor.front_door_sensor
+    to: 'on'
+  - platform: state
+    entity_id: lock.front_door
+    to: 'unlocked'
+  condition:
+    condition: or
+    conditions:
+      - condition: sun
+        after: sunset
+#        after_offset: "-00:45:00"
+      - condition: sun
+        before: sunrise
+#        before_offset: "00:45:00"
+  action:
+  - data:
+      entity_id:
+        - switch.back_porch_light
+        - switch.back_yard_lights
+        - switch.front_porch_light
+        - switch.front_yard_lights
+    service: switch.turn_on
+  - delay: '00:10:00'
+  - data:
+      entity_id:
+        - switch.back_porch_light
+        - switch.back_yard_lights
+        - switch.front_porch_light
+        - switch.front_yard_lights
+    service: switch.turn_off
+
+     #####################################################
+     ## Architectural Lights On at Sunset
+     #####################################################
+
+- alias: Architectural Lights On
+  initial_state: true
+  hide_entity: false
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "-00:15:00"
+  condition: []
+  action:
+  - data:
+      entity_id: 
+        - light.lightify_gardenspot_left
+        - light.lightify_gardenspot_right
+      rgb_color: [255,250,244]
+      brightness: 200
+    service: light.turn_on
+
+     #####################################################
+     ## Architectural Lights Off at 11:30 pm
+     #####################################################
+
+- alias: Architectural Lights Off
+  initial_state: true
+  hide_entity: false
+  trigger:
+    platform: time
+    at: "23:30:00"
+  condition: []
+  action:
+  - data:
+      entity_id:
+        - light.lightify_gardenspot_left
+        - light.lightify_gardenspot_right
+    service: light.turn_off

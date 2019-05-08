@@ -1,0 +1,10 @@
+---
+# Provides a list of entities to include in HomeKit.
+#
+# https://www.home-assistant.io/components/homekit/#include_entities
+#
+include_entities:
+  - input_boolean.presence_russ
+  - input_boolean.presence_laura
+  - input_boolean.presence_abigail
+  - input_boolean.presence_mary

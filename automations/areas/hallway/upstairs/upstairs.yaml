@@ -1,0 +1,64 @@
+---
+##########################################################
+## Upstairs Automation
+##########################################################
+
+     #####################################################
+     ## Abigail Light On for Wake Up
+     #####################################################
+
+- alias: Abigail Light On for Wake Up
+  initial_state: true
+  trigger:
+    platform: time
+    at: '05:30:00'
+  condition:
+    condition: state  
+    entity_id: binary_sensor.workday_sensor
+    state: 'on'
+  action:
+  - data:
+      entity_id: light.abigail_bedroom_lamp
+      brightness: 255
+      transition: 300
+    service: light.turn_on
+
+     #####################################################
+     ## Mary Light On for Wake Up
+     #####################################################
+
+- alias: Mary Light On for Wake Up
+  initial_state: true
+  trigger:
+    platform: time
+    at: '06:00:00'
+  condition:
+    condition: state
+    entity_id: binary_sensor.workday_sensor
+    state: 'on'
+  action:
+  - data:
+      entity_id: light.mary_bedroom_lamp
+      brightness: 255
+      transition: 300
+    service: light.turn_on
+
+     #####################################################
+     ## Turn Off Upstairs Bedroom Lights
+     #####################################################
+
+- alias: Turn Off Upstairs Bedroom Lights
+  initial_state: true
+  trigger:
+    platform: time
+    at: '07:15:00'
+  condition:
+    condition: state
+    entity_id: binary_sensor.workday_sensor
+    state: 'on'
+  action:
+  - data:
+      entity_id: 
+        - light.mary_bedroom_lamp
+        - light.abigail_bedroom_lamp
+    service: light.turn_off

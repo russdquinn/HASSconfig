@@ -1,0 +1,14 @@
+---
+
+platform: glances
+host: localhost
+name: glances_ubuntu
+version: 3
+resources:
+  - processor_load
+  - cpu_use_percent
+  - memory_use_percent
+  - disk_use_percent
+  - docker_active
+  - docker_cpu_use
+  - docker_memory_use

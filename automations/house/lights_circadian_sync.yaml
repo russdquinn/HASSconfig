@@ -1,0 +1,24 @@
+---
+
+- alias: Turned On Lights Match Circadian Temperature
+  initial_state: true
+  trigger:
+    - platform: state
+      entity_id:
+        - light.kitchen_table
+      to: 'on'
+    - platform: state
+      entity_id:
+        - light.dining_room_lamp
+      to: 'on'
+    - platform: state
+      entity_id:
+        - light.abigail_bedroom_lamp
+      to: 'on'
+  action:
+    - service: light.turn_on
+      data_template:
+        entity_id: "{{ trigger.entity_id }}"
+        brightness: "{{ states('input_number.light_brightness') | int }}"
+        kelvin: "{{ states('input_number.light_kelvin') | int}}"
+        transition: 15

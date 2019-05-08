@@ -1,0 +1,35 @@
+# ignore file types
+*.log
+*.db
+*.conf
+*.json
+*.pickle
+*.state
+._*
+*.xml
+*.txt
+*.sqlite
+*.png
+*.uuid
+*.key
+*.pid
+*.csr
+*.crt
+__pycache__
+zwcfg_*
+core
+.vscode
+.Trash*
+
+# Ignore folders
+.storage
+.cloud
+deps
+glances
+tts
+
+# Ignore specific files
+ip_bans.yaml
+secrets.yaml
+known_devices.yaml
+zwave_device_config.yaml

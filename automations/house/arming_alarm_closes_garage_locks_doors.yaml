@@ -1,0 +1,29 @@
+---
+#####################################################
+## Arming Away or Home Closes Garage Doors and Locks Doors
+#####################################################
+
+- alias: Arming Away or Home Closes Garage and Locks Doors
+  initial_state: true
+  trigger:
+  - entity_id: alarm_control_panel.abode
+    platform: state
+    from: 'disarmed'
+    to: 'armed_home'
+  - entity_id: alarm_control_panel.abode
+    platform: state
+    from: 'disarmed'
+    to: 'armed_away'
+  condition: []
+  action:
+  - data:
+      entity_id: 
+        - cover.garage_door_left
+        - cover.garage_door_right
+    service: cover.close_cover
+  - data:
+      entity_id:
+        - lock.back_door
+        - lock.front_door
+        - lock.garage_door
+    service: lock.lock

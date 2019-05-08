@@ -1,0 +1,31 @@
+---
+##############################################################
+## Play Rush Limbaugh at 11 am
+##############################################################
+
+- alias: Rush Limbaugh at 11 am
+  initial_state: true
+  trigger:
+    - platform: time
+      at: '00:11:00'
+  condition:
+    condition: state  
+    entity_id: binary_sensor.workday_sensor
+    state: 'on'
+  action:
+#    - service: media_player.sonos_unjoin
+#    - data:
+#        entity_id: media_player.master_bedroom_airtunes_speaker_2
+#      service: media_player.turn_on
+#    - data:
+#        entity_id: media_player.master_bedroom_airtunes_speaker_2
+#        volume_level: '0.25'
+#      service: media_player.volume_set
+    - data:
+        entity_id: media_player.living_room
+        source: '92.5 Fox News'
+      service: media_player.select_source
+    - data:
+        entity_id: media_player.living_room
+      service: media_player.media_play  
+

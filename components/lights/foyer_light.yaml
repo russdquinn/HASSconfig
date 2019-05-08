@@ -1,0 +1,6 @@
+---
+# Foyer Light using a Z-Wave switch
+
+platform: switch
+name: Foyer Light
+entity_id: switch.foyer_light

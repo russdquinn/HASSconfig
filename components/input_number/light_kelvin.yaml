@@ -1,0 +1,8 @@
+---
+# Light Kelvin
+
+light_kelvin:
+  name: Light Kelvin
+  min: 2000
+  max: 6500
+  step: 100

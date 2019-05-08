@@ -1,0 +1,15 @@
+---
+
+vacuum_room:
+  name: Choose a room to clean
+  options:
+    - Select Input
+    - Dining Room
+    - Foyer
+    - Hallway
+    - Kitchen
+    - Laundry Room
+    - Living Room
+    - Master Bathroom
+    - Master Bedroom
+  initial: Select Input

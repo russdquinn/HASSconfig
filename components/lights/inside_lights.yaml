@@ -1,0 +1,21 @@
+platform: group
+name: Inside Lights
+entities:
+  - light.abigail_bedroom_lamp
+  - light.den_ceiling
+  - light.den_lamps
+  - light.dining_room_lamp
+  - light.downstairs_hallway
+  - light.foyer_light
+  - light.garage_lights
+  - light.kitchen_cabinet
+  - light.kitchen_ceiling
+  - light.kitchen_table
+  - light.living_room_lamps
+  - light.living_room_ceiling_lights
+  - light.mary_bedroom_lamp
+  - light.master_bathroom_tub_ceiling
+  - light.master_bedroom_lamps
+  - light.master_bedroom_ceiling
+  - light.upstairs_hallway_ceiling
+  - light.upstairs_hallway_lamp

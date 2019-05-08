@@ -1,0 +1,213 @@
+---
+##########################################################
+## Circadian Lights Automation
+##   Sets Color Temperature and Brigtness to Match TOD
+##########################################################
+
+     #####################################################
+     ## Wake Up
+     ## - Wake Up = person out of bed
+     ## - color temp = 2200K
+     ## - brightness = 200
+     #####################################################
+
+#- alias: Change Color Temp at Wake Up
+#  trigger:
+#     - platform: 
+#        event: 
+#    action:
+
+     #####################################################
+     ## Sunrise
+     ## - color temp = 2700K
+     ## - brightness = 200
+     #####################################################
+
+- alias: Change Color Temp at Sunrise
+  initial_state: true
+  trigger:
+    platform: sun
+    event: sunrise
+    offset: "-00:45:00"
+  action:
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_kelvin
+        value: 2700
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_brightness
+        value: 200
+
+     #####################################################
+     ## Early Morning
+     ## - early morning = sunrise + 1 hr
+     ## - color temp = 3200K
+     ## - brightness = 200
+     #####################################################
+
+- alias: Change Color Temp for Early Morning
+  initial_state: true
+  trigger:
+    platform: sun
+    event: sunrise
+    offset: "01:00:00"
+  action:
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_kelvin
+        value: 3200
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_brightness
+        value: 200
+
+     #####################################################
+     ## Mid Morning
+     ## - mid morning = 9:00 am
+     ## - color temp = 4000K
+     ## - brightness = 254
+     #####################################################
+
+- alias: Change Color Temp for Mid morning
+  initial_state: true
+  trigger:
+    platform: time
+    at: '09:00:00'
+  action:
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_kelvin
+        value: 4000
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_brightness
+        value: 200
+
+     #####################################################
+     ## Noon and Sunny
+     ## - mid morning = 11:30 am
+     ## - color temp = 5000K
+     ## - brightness = 254
+     #####################################################
+
+- alias: Change Color Temp for Noon
+  initial_state: true
+  trigger:
+    platform: time
+    at: '11:30:00'
+  action:
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_kelvin
+        value: 5000
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_brightness
+        value: 200
+
+     #####################################################
+     ## Noon and Overcast
+     ## - mid morning = 9:00 am
+     ## - color temp = 6000K
+     ## - brightness = 254
+     #####################################################
+
+#- alias: Change Color Temp for Noon and Overcast
+#    trigger:
+#      - platform: time
+#        at: '11:30:00'
+#    condition:
+#    action:
+
+     #####################################################
+     ## Mid Afternoon
+     ## - mid morning = 3:00 pm
+     ## - color temp = 4000K
+     ## - brightness = 254
+     #####################################################
+
+- alias: Change Color Temp for Mid Afternoon
+  initial_state: true
+  trigger:
+    platform: time
+    at: '15:00:00'
+  action:
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_kelvin
+        value: 4000
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_brightness
+        value: 200
+
+     #####################################################
+     ## Late Afternoon
+     ## - early morning = Sunset - 1 hr
+     ## - color temp = 3200K
+     ## - brightness = 200
+     #####################################################
+
+- alias: Change Color Temp for Late Afternoon
+  initial_state: true
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "-01:00:00"
+  action:
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_kelvin
+        value: 3200
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_brightness
+        value: 200
+
+     #####################################################
+     ## Sunset
+     ## - color temp = 2700K
+     ## - brightness = 200
+     #####################################################
+
+- alias: Change Color Temp at Sunset
+  initial_state: true
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "00:45:00"
+  action:
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_kelvin
+        value: 2700
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_brightness
+        value: 200
+
+     #####################################################
+     ## Nigh Time
+     ## - color temp = 6000K
+     ## - brightness = 2
+     #####################################################
+
+- alias: Change Color Temp at Night Time
+  initial_state: true 
+  trigger:
+    platform: state
+    entity_id: input_boolean.bed_occupied
+    to: 'on'
+  condition:
+    condition: sun
+    after: sunset
+  action:
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_kelvin
+        value: 6000
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_brightness
+        value: 2

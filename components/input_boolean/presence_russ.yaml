@@ -1,0 +1,6 @@
+---
+# Input Boolean for Presence Russ
+
+presence_russ:
+  name: Presence Russ
+  icon: mdi:account

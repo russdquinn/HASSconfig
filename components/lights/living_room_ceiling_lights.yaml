@@ -1,0 +1,6 @@
+---
+# Living Room Ceiling Lights using a Z-Wave switch
+
+platform: switch
+name: Living Room Ceiling Lights
+entity_id: switch.living_room_ceiling_lights

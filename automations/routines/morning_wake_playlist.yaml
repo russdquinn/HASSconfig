@@ -1,0 +1,26 @@
+---
+##############################################################
+## Wake Up Music at 5:00 am
+##############################################################
+
+- alias: Wake Up Playlist at 5 am
+ # initial_state: true
+  trigger:
+    - platform: time
+      at: '5:30'
+  condition: []
+  action:
+    - service: media_player.sonos_unjoin
+    - data:
+        entity_id: media_player.master_bedroom_airtunes_speaker_2
+      service: media_player.turn_on
+    - data:
+        entity_id: media_player.master_bedroom_airtunes_speaker_2
+        volume_level: '0.25'
+      service: media_player.volume_set
+    - data:
+        entity_id: media_player.itunes
+        media_content_type: playlist
+        media_content_id: "Wake"
+      service: media_player.play_media      
+

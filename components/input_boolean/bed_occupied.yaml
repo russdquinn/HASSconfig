@@ -1,0 +1,7 @@
+---
+# Input Boolean for Someone is in bed
+
+bed_occupied:
+  name: Someone is in bed
+  initial: off
+  icon: mdi:hotel

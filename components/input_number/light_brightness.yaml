@@ -1,0 +1,7 @@
+---
+# Light Brightness
+
+light_brightness:
+  name: Light Brightness
+  min: 0
+  max: 255

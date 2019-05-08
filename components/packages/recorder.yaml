@@ -1,0 +1,21 @@
+---
+# The recorder component is storing details in a MariaDB database which
+# then are handled by the history and logbook components.
+#
+# https://www.home-assistant.io/components/recorder/
+#
+
+recorder:
+  db_url: !secret mariadb_url
+  purge_keep_days: 2
+  exclude:
+    domains:
+      - automation
+      - weblink
+      - updater
+    entities:
+      - sun.sun
+      - sensor.last_boot
+      - sensor.date
+      - sensor.time
+#      - sensor.hassio_uptime

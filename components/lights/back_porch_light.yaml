@@ -1,0 +1,6 @@
+---
+# Back Porch light using a Z-Wave switch
+
+platform: switch
+name: Back Porch Light
+entity_id: switch.back_porch_light

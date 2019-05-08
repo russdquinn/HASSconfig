@@ -1,0 +1,9 @@
+---
+
+platform: systemmonitor
+resources:
+  - type: processor_use
+  - type: last_boot
+  - type: memory_free
+  - type: disk_free
+    arg: /

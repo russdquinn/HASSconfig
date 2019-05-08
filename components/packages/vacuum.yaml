@@ -1,0 +1,8 @@
+---
+     ################################################################
+     ## Neato Vacuum Cleaner
+     ################################################################
+
+neato:
+  username: !secret neato_username
+  password: !secret neato_password

@@ -1,0 +1,31 @@
+---
+#####################################################
+## Unlocking Any Lock Disarms Alarm
+#####################################################
+
+- alias: Unlocking Any Lock Disarms Alarm
+  initial_state: true
+  trigger:
+  - entity_id: lock.back_door
+    platform: state
+    to: 'unlocked'
+  - entity_id: lock.front_door
+    platform: state
+    to: 'unlocked'
+  - entity_id: lock.garage_door
+    platform: state
+    to: 'unlocked'
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: alarm_control_panel.abode
+        state: 'armed_away'
+      - condition: state
+        entity_id: alarm_control_panel.abode
+        state: 'armed_home'
+  action:
+  - data:
+      entity_id: 
+        - alarm_control_panel.abode
+    service: alarm_control_panel.alarm_disarm

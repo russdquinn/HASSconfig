@@ -1,0 +1,9 @@
+---
+# https://www.home-assistant.io/components/media_player.plex/
+#
+
+platform: plex
+host: 10.17.10.5
+token: !secret plex_token
+#username: !secret sensor_plex_username
+#password: !secret sensor_plex_password

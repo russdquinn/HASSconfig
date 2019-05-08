@@ -1,0 +1,11 @@
+---
+     ################################################################
+     # Abode
+     ################################################################
+
+abode:
+  username: !secret abode_username
+  password: !secret abode_password
+  name: Abode
+  exclude:
+    - 'RF:01067200'

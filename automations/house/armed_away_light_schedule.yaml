@@ -1,0 +1,56 @@
+---
+     #####################################################
+     ## Armed Away Light Schedule
+     #####################################################
+
+- alias: Armed Away Light Schedule
+  initial_state: false
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: "-00:45:00"
+  condition: []
+  action:
+  - data:
+      entity_id: 
+        - light.upstairs_hallway_lamp
+        - light.dining_room_lamp
+        - light.kitchen_ceiling
+    service: light.turn_on
+  - delay: "01:00:00"
+  - data:
+      entity_id: 
+        - light.living_room_lamps
+    service: light.turn_on
+  - delay: "01:00:00"
+  - data:
+      entity_id: 
+        - light.mary_bedroom_lamp
+        - light.abigail_bedroom_lamp
+    service: light.turn_on
+  - data:
+      entity_id: 
+        - light.kitchen_ceiling
+    service: light.turn_off
+  - delay: "00:30:00"
+  - data:
+      entity_id: 
+        - light.mary_bedroom_lamp
+        - light.abigail_bedroom_lamp
+        - light.upstairs_hallway_lamp
+    service: light.turn_off
+  - delay: "01:00:00"
+  - data:
+      entity_id: 
+        - light.master_bedroom_lamps
+    service: light.turn_on
+  - data:
+      entity_id: 
+        - light.dining_room_lamp
+        - light.living_room_lamps
+    service: light.turn_off
+  - delay: "01:00:00"
+  - data:
+      entity_id: 
+        - light.master_bedroom_lamps
+    service: light.turn_off

@@ -1,0 +1,62 @@
+---
+##########################################################
+## Garage Automation
+##########################################################
+
+     #####################################################
+     ## Garage Lights On with Doors Opening or Unlocking
+     #####################################################
+
+- alias: Garage Lights On with Door Opening
+  initial_state: true
+  trigger:
+  - platform: state
+    entity_id: cover.garage_door_left
+    to: 'opening'
+  - platform: state
+    entity_id: cover.garage_door_right
+    to: 'opening'
+  - platform: state
+    entity_id: binary_sensor.basement_door_sensor
+    to: 'on'
+  - platform: state
+    entity_id: lock.garage_door
+    to: 'unlocked'
+  condition: []
+  action:
+  - data:
+      entity_id: switch.garage_lights
+    service: switch.turn_on
+
+     #####################################################
+     ## Garage Lights Off with Doors Closed or Locked
+     #####################################################
+
+- alias: Garage Lights Off with Door Closed
+  initial_state: true
+  trigger:
+  - platform: state
+    entity_id: cover.garage_door_left
+    to: 'closed'
+    for:
+      minutes: 10
+  - platform: state
+    entity_id: cover.garage_door_right
+    to: 'closed'
+    for:
+      minutes: 10
+  - platform: state
+    entity_id: binary_sensor.basement_door_sensor
+    to: 'off'
+    for:
+      minutes: 10
+  - platform: state
+    entity_id: lock.garage_door
+    to: 'locked'
+    for:
+      minutes: 10
+  condition: []
+  action:
+  - data:
+      entity_id: switch.garage_lights
+    service: switch.turn_off

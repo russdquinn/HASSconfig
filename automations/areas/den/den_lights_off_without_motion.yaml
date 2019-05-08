@@ -1,0 +1,18 @@
+---
+#####################################################
+## Den Lamps and Lights Off Without Motion
+#####################################################
+
+- alias: Den Lamps and Lights Off Without Motion
+  initial_state: true
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.den_sensor_motion
+    to: 'off'
+    for: '00:15:00'
+  action:
+  - data:
+      entity_id:
+        - light.den_lamps
+        - light.den_ceiling_lights
+    service: light.turn_off

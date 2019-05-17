@@ -3,7 +3,7 @@
 ## Start Homekit after Z-wave Ready
 #####################################################
 
-- alias: 'Start HomeKit'
+- alias: 'HomeKit Start'
   initial_state: true
   trigger:
     - platform: event

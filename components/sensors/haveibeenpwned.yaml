@@ -1,0 +1,12 @@
+---
+
+# Example configuration.yaml entry using cloud based emoncms
+# https://www.home-assistant.io/components/haveibeenpwned/
+# https://haveibeenpwned.com
+
+platform: haveibeenpwned
+email:
+  - russdquinn@gmail.com
+  - russ@quinncentral.com
+  - russquinn@icloud.com
+  - rquinn@enonbc.org

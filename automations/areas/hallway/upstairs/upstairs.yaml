@@ -14,13 +14,11 @@
     at: '05:30:00'
   condition:
     condition: state  
-    entity_id: binary_sensor.workday_sensor
+    entity_id: binary_sensor.workday
     state: 'on'
   action:
   - data:
       entity_id: light.abigail_bedroom_lamp
-      brightness: 255
-      transition: 300
     service: light.turn_on
 
      #####################################################
@@ -34,13 +32,11 @@
     at: '06:00:00'
   condition:
     condition: state
-    entity_id: binary_sensor.workday_sensor
+    entity_id: binary_sensor.workday
     state: 'on'
   action:
   - data:
       entity_id: light.mary_bedroom_lamp
-      brightness: 255
-      transition: 300
     service: light.turn_on
 
      #####################################################
@@ -54,7 +50,7 @@
     at: '07:15:00'
   condition:
     condition: state
-    entity_id: binary_sensor.workday_sensor
+    entity_id: binary_sensor.workday
     state: 'on'
   action:
   - data:

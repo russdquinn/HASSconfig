@@ -1,0 +1,37 @@
+---
+     #####################################################
+     ## Arriving Home Turns On Outside Lights
+     #####################################################
+
+- alias: Arriving Home Turns On Outside Lights
+  initial_state: true
+  trigger:
+  - platform: state
+    entity_id: device_tracker.abigails_iphone
+    zone: zone.home
+    event: enter
+  - platform: zone
+    entity_id: device_tracker.lauras_iphone
+    zone: zone.home
+    event: enter
+  - platform: zone
+    entity_id: device_tracker.russs_iphone
+    zone: zone.home
+    event: enter
+  condition:
+    condition: or
+    conditions:
+      - condition: sun
+        after: sunset
+        after_offset: "-00:45:00"
+      - condition: sun
+        before: sunrise
+        before_offset: "00:45:00"
+  action:
+  - data:
+      entity_id: 
+        - switch.back_porch_light
+        - switch.back_yard_lights
+        - switch.front_porch_light
+        - switch.front_yard_lights
+    service: switch.turn_on

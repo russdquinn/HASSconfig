@@ -1,0 +1,39 @@
+---
+# https://github.com/claytonjn/hass-circadian_lighting/wiki/Advanced-Configuration#switch-configuration-variables
+
+platform: circadian_lighting
+name: circadian_lighting
+lights_ct:
+  - light.abigail_bedroom_lamp
+  - light.den_hue_go
+  - light.den_lamp
+  - light.den_lamp_2
+  - light.dining_room_lamp
+  - light.downstairs_hallway
+  - light.kitchen_ceiling_1
+  - light.kitchen_ceiling_2
+  - light.kitchen_ceiling_3
+  - light.kitchen_ceiling_4
+  - light.kitchen_ceiling_5
+  - light.kitchen_ceiling_6
+  - light.kitchen_table_1
+  - light.kitchen_table_2
+  - light.kitchen_table_3
+  - light.kitchen_table_4
+  - light.kitchen_table_5
+  - light.living_room_lamp_1
+  - light.living_room_lamp_2
+  - light.living_room_lamp_3
+  - light.mary_bedroom_lamp
+  - light.master_bathroom_tub_ceiling
+  - light.master_bedroom_lamp_1
+  - light.master_bedroom_lamp_2
+  - light.upstairs_hallway_ceiling_1
+  - light.upstairs_hallway_ceiling_2
+  - light.upstairs_hallway_ceiling_3
+  - light.upstairs_hallway_lamp
+min_brightness: 25
+sleep_entity: input_select.house_mode
+sleep_state: 'Sleep'
+sleep_colortemp: 6000
+sleep_brightness: 1

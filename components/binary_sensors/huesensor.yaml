@@ -1,0 +1,7 @@
+---
+# This is the binary sensor for the custom component: huesensor. 
+#
+#
+# https://github.com/robmarkcole/Hue-sensors-HASS
+#
+platform: huesensor

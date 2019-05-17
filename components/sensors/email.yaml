@@ -1,0 +1,7 @@
+---
+# https://github.com/ljmerza/ha-email-sensor
+
+
+platform: email
+email: !secret my_email
+password: !secret my_email_password

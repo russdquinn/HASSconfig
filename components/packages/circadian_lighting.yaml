@@ -1,0 +1,8 @@
+---
+# The circadian_lighting custom component creates a sensor and switches 
+# to sync color temperature and brightness of lights to position of sun. 
+#
+# https://github.com/claytonjn/hass-circadian_lighting
+# https://community.home-assistant.io/t/circadian-lighting-custom-component/61246/349
+#
+circadian_lighting:

@@ -12,6 +12,7 @@
 #  hide_entity: True
   trigger:
   - platform: state
+#custom    entity_id: binary_sensor.living_room_motion_sensor
     entity_id: binary_sensor.living_room_sensor_motion
     to: 'on'
   condition:
@@ -21,9 +22,6 @@
   action:
   - data_template:
       entity_id: light.living_room_lamps
-      brightness: "{{ states('input_number.light_brightness') | int }}"
-      kelvin: "{{ states('input_number.light_kelvin') | int }}"
-#      transition: 15
     service: light.turn_on
 
      #####################################################

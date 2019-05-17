@@ -2,6 +2,7 @@
 ##########################################################
 ## Circadian Lights Automation
 ##   Sets Color Temperature and Brigtness to Match TOD
+## **** Replaced this with Circadian Lighting Custom Component
 ##########################################################
 
      #####################################################

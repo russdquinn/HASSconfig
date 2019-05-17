@@ -1,0 +1,26 @@
+---
+
+     #####################################################
+     ## House Mode Changed to Sleep
+     #####################################################
+
+- alias: Bed Presence Input Boolean Turned On
+  initial_state: true
+  trigger:
+    - platform: state
+      entity_id: input_boolean.bed_occupied
+      to: 'on'
+
+  condition:
+    condition: or
+    conditions:
+      - condition: sun
+        after: sunset
+      - condition: sun
+        before: sunrise
+
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.house_mode
+        option: Sleep

@@ -6,12 +6,14 @@
 - alias: Rush Limbaugh at 11 am
   initial_state: true
   trigger:
-    - platform: time
-      at: '00:11:00'
+    platform: time
+    at: '11:00:00'
+
   condition:
     condition: state  
-    entity_id: binary_sensor.workday_sensor
+    entity_id: binary_sensor.workday
     state: 'on'
+
   action:
 #    - service: media_player.sonos_unjoin
 #    - data:

@@ -6,12 +6,12 @@
 - alias: Worship Music at 6 am
   initial_state: true
   trigger:
-    - platform: time
-      at: '6:00'
+    platform: time
+    at: '06:00:00'
 
   condition:
     condition: state  
-    entity_id: binary_sensor.workday_sensor
+    entity_id: binary_sensor.workday
     state: 'on'
 
   action:

@@ -10,6 +10,14 @@ homeassistant:
       name: Authenticator app
     - type: notify
       message: 'Please enter this verification code for Home Assistant {}'
+  auth_providers:
+    - type: homeassistant
+    - type: trusted_networks
+      trusted_networks:
+        - 10.17.0.0/24
+      trusted_users:
+        10.17.0.0/24: !secret user_id
+      allow_bypass_login: true
   name: Quinncentral
   latitude: !secret homeassistant_latitude
   longitude: !secret homeassistant_longitude

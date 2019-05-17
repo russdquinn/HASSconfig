@@ -1,5 +1,5 @@
 ---
-
+### Replaced this with Circadian Lighting Custom Component
 - alias: Turned On Lights Match Circadian Temperature
   initial_state: true
   trigger:

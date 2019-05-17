@@ -1,0 +1,23 @@
+---
+     #####################################################
+     ## Master Bedroom Lamps and Lights Off Without Motion
+     #####################################################
+
+- alias: Master Bedroom Lights Off without Motion
+  initial_state: true
+#  hide_entity: True
+  trigger:
+  - entity_id: binary_sensor.master_bedroom_sensor_motion
+    platform: state
+    to: 'off'
+    for: '00:15:00'
+  condition:
+    - condition: state
+      entity_id: input_boolean.bed_occupied
+      state: 'off'
+  action:
+  - data:
+      entity_id: 
+        - light.master_bedroom_ceiling_lights
+        - light.master_bedroom_lamps
+    service: light.turn_off

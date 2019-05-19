@@ -2,13 +2,18 @@
 
 platform: glances
 host: 10.17.10.10
-name: glances_macmini
+name: macmini
 version: 3
 resources:
   - processor_load
   - cpu_use_percent
   - memory_use_percent
+  - memory_use
+  - memory_free
   - disk_use_percent
-  - docker_active
-  - docker_cpu_use
-  - docker_memory_use
+  - disk_use
+  - disk_free
+
+#  - docker_active
+#  - docker_cpu_use
+#  - docker_memory_use

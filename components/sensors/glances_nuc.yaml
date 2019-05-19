@@ -1,7 +1,6 @@
 ---
 
 platform: glances
-#host: localhost
 name: NUC
 username: !secret hass_username
 password: !secret hass_password

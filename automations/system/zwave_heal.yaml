@@ -1,0 +1,16 @@
+---
+##############################################################
+## Z-wave Heal
+##############################################################
+
+- alias: 'Z-wave Heal'
+  initial_state: true
+  trigger:
+    platform: time
+    at: '02:30:00'
+
+  condition: []
+
+  action:
+    service: zwave.heal_network
+

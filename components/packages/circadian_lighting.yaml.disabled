@@ -6,3 +6,5 @@
 # https://community.home-assistant.io/t/circadian-lighting-custom-component/61246/349
 #
 circadian_lighting:
+  transition: 60
+  interval: 300

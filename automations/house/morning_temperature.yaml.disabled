@@ -1,4 +1,5 @@
 ---
+## Doing this with Ecobee Modes now
 - alias: Temperature at Morning
   initial_state: true
   trigger:

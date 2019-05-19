@@ -1,9 +1,9 @@
 #####################################################################
 # Home Assistant Configuration
 #####################################################################
-discovery:
-  ignore:
-    - samsung_tv
+#discovery:
+#  ignore:
+#    - samsung_tv
 homeassistant:
   auth_mfa_modules:
     - type: totp

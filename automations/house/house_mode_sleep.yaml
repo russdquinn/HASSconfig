@@ -24,3 +24,11 @@
       data:
         entity_id: input_select.house_mode
         option: Sleep
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_kelvin
+        value: 6000
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_brightness
+        value: 2

@@ -2,12 +2,33 @@
 
 platform: darksky
 api_key: !secret darksky_api_key
+forecast:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
 monitored_conditions:
+  - icon
   - temperature
+  - temperature_high
+  - temperature_low
   - apparent_temperature
+  - apparent_temperature_high
+  - apparent_temperature_low
   - wind_speed
+  - wind_bearing
   - wind_gust
   - humidity
+  - precip_type
+  - precip_probability
+  - precip_accumulation
+  - precip_intensity
+  - precip_intensity_max
+  - uv_index
+  - pressure
+  - visibility
   - daily_summary
   - summary
   - hourly_summary
@@ -17,3 +38,5 @@ monitored_conditions:
   - sunset_time
   - nearest_storm_distance
   - nearest_storm_bearing
+scan_interval:
+  minutes: 5

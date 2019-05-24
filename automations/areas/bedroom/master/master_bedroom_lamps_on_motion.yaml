@@ -23,5 +23,4 @@
       entity_id: light.master_bedroom_lamps
       brightness: "{{ states('input_number.light_brightness') | int }}"
       kelvin: "{{ states('input_number.light_kelvin') | int }}"
-      transition: 15
     service: light.turn_on

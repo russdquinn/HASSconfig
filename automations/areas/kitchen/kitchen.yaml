@@ -24,7 +24,6 @@
       entity_id: light.kitchen_ceiling
       brightness: "{{ states('input_number.light_brightness') | int }}"
       kelvin: "{{ states('input_number.light_kelvin') | int }}"
-      transition: 15
     service: light.turn_on
   - data:
       entity_id: switch.kitchen_cabinet_lights

@@ -1,0 +1,18 @@
+ ---
+     #####################################################
+     ## Abigail Light On for Wake Up
+     #####################################################
+
+- alias: Abigail Light On for Wake Up
+  initial_state: true
+  trigger:
+    platform: time
+    at: '05:30:00'
+  condition:
+    condition: state  
+    entity_id: binary_sensor.workday
+    state: 'on'
+  action:
+  - data:
+      entity_id: light.abigail_bedroom_lamp
+    service: light.turn_on

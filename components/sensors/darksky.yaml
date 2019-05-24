@@ -1,5 +1,8 @@
 ---
 
+# https://github.com/iammexx/home-assistant-config/tree/master/ui/darksky
+
+
 platform: darksky
 api_key: !secret darksky_api_key
 forecast:

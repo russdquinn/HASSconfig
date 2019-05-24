@@ -14,5 +14,4 @@
   - data:
       entity_id:
         - light.den_lamps
-        - light.den_ceiling_lights
     service: light.turn_off
